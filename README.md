@@ -70,7 +70,7 @@ Example :
 <h2> Values of attributes in mytree element </h2>
 
 Here, 
-<p>
+
 	<b>tableData</b> is the scope object which hold your data source.
 Example for tableData;
 ~~~
@@ -135,22 +135,20 @@ $scope.tableData =
 ~~~
 
 in your controller.
-</p>
-<p>
+
+
 <b>searchTreeTxt</b> is your scope object which contain search text.
 Example,
 ~~~
 <!--Tree search box-->
                     <input id="searchableBox" results="5" type="search" class="form-control" ng-model="searchTreeTxt" placeholder="Search tree"  />
 ~~~
-</p>
-<p>
+
 <b>pageSize</b> is the root elements per page for pagination.
 for example 
 ~~~
 $scope.pageSize = 10;
 ~~~
-</p>
-<p>
+
 <b>expandAll </b> is a boolean value. Change in this variable will expand or collapse all branches in the tree.
-</p>
+
