@@ -24,11 +24,15 @@ You need to add these three file to your solution. They are,
 	<li> my_tree_template.html </li>
 </ul>
 
-<h2> Important : Change templateUrl in my_tree_directive.js to your own path to my_tree_template.html </h2>
+<h4> Important : Change templateUrl in my_tree_directive.js to your own path to my_tree_template.html </h4>
 
-That is, go and open _my_tree_directive.js_ and find ~~~ templateUrl : '/my_tree_directive/my_tree_template.html' ~~~. Replace this url with your own path to _my_tree_template.html_.
+That is, go and open _my_tree_directive.js_ and find 
+~~~ 
+templateUrl : '/my_tree_directive/my_tree_template.html' 
+~~~
+. Replace this url with your own path to <b> _my_tree_template.html_ </b>.
 
-Note : Do not forgot to add ~~~"myTreeApp"~~ to your module.
+Note : Do not forgot to add <b>myTreeApp</b> to your module.
 
 For example,
 ~~~
@@ -37,7 +41,7 @@ var app = angular.module("myApp", ["myTreeApp"]);
 
 Thats all !!!
 
-Now you can use ~~~<mytree> </mytree>~~~ directive to create data tree.
+Now you can use <b><mytree> </mytree></b> directive to create data tree.
 
 # How to configure your directive
 
@@ -48,26 +52,26 @@ Example :
 
 <h2> Attributes of mytree element </h2>
 <p>
- ~~~source-data~~~ - specify your scope object to this attrubte. This will be the data of the tree.
+ <b>source-data</b> - specify your scope object to this attrubte. This will be the data of the tree.
 </p>
 
 <p>
-~~~search-text~~~ - specify your search text model here.
+<b>search-text</b> - specify your search text model here.
 </p>
 
 <p>
-~~~page-size~~~ - size of each page. That is how many elements per page. Not it is not specify directly, you need to use a scope object as this attrubtue's value and this scope object contain number.
+<b>page-size</b> - size of each page. That is how many elements per page. Not it is not specify directly, you need to use a scope object as this attrubtue's value and this scope object contain number.
 </p>
 
 <p>
-~~~ expand-all ~~~ - This should point to a scope object which should be a boolean value.
+<b> expand-all </b> - This should point to a scope object which should be a boolean value.
 </p>
 
 <h2> Values of attributes in mytree element </h2>
 
 Here, 
 <p>
-	~~~tableData~~~ is the scope object which hold your data source.
+	<b>tableData</b> is the scope object which hold your data source.
 Example for tableData;
 ~~~
 $scope.tableData =
@@ -133,7 +137,7 @@ $scope.tableData =
 in your controller.
 </p>
 <p>
-~~~searchTreeTxt~~~ is your scope object which contain search text.
+<b>searchTreeTxt</b> is your scope object which contain search text.
 Example,
 ~~~
 <!--Tree search box-->
@@ -141,12 +145,12 @@ Example,
 ~~~
 </p>
 <p>
-~~~pageSize~~~ is the root elements per page for pagination.
+<b>pageSize</b> is the root elements per page for pagination.
 for example 
 ~~~
 $scope.pageSize = 10;
 ~~~
 </p>
 <p>
-~~~ expandAll ~~~ is a boolean value. Change in this variable will expand or collapse all branches in the tree.
+<b>expandAll </b> is a boolean value. Change in this variable will expand or collapse all branches in the tree.
 </p>
