@@ -1,0 +1,40 @@
+﻿
+
+<ul class="my-tree-root">
+    <li class="level-1" ng-repeat="borrower in (filteredData = (sourceData | customFilter : searchText:brachLocked) ) | startFrom : ((currentPage-1)*pageSize) | limitTo : pageSize ">
+        <div class="tree-row">
+            <span ng-click="unlock_expanding();borrower.expanded = !borrower.expanded;">
+                <i class=" {{borrower.expanded? 'fa fa-chevron-down':'fa fa-chevron-right' }} "></i>
+                <span class="node-icon-type glyphicon {{borrower.expanded? 'glyphicon-folder-open':'glyphicon-folder-close' }}" style="display: inline;"></span>
+                {{borrower.Name}}
+            </span>
+            <div class="btn-group pull-right node-buttons"><button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li role="presentation" class="dropdown-header">Action</li><li role="presentation"><a href="#notarget" class="node-action-0" tabindex="-1">Create before</a></li><li role="presentation"><a href="#notarget" class="node-action-1" tabindex="-1">Create after</a></li><li role="presentation"><a href="#notarget" class="node-action-2" tabindex="-1">Create first child</a></li><li role="presentation"><a href="#notarget" class="node-action-3" tabindex="-1">Create last child</a></li><li class="divider"></li><li role="presentation"><a href="#notarget" class="node-action-5" tabindex="-1">Update</a></li><li role="presentation"><a href="#notarget" class="node-action-6" tabindex="-1">Delete</a></li></ul></div>
+        </div>
+        <ul>
+            <li class="level-2" ng-repeat="property in borrower.children" ng-show="borrower.expanded">
+                <div class="tree-row">
+                    <span ng-click="brachLocked = false;property.expanded = !property.expanded;">
+                        <i class=" {{property.expanded? 'fa fa-chevron-down':'fa fa-chevron-right' }} "></i>
+                        <span class="node-icon-type glyphicon {{property.expanded? 'glyphicon-folder-open':'glyphicon-folder-close' }}" style="display: inline;"></span>
+                        {{property.Name}}
+                    </span>
+                    <div class="btn-group pull-right node-buttons"><button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li role="presentation" class="dropdown-header">Action</li><li role="presentation"><a href="#notarget" class="node-action-0" tabindex="-1">Create before</a></li><li role="presentation"><a href="#notarget" class="node-action-1" tabindex="-1">Create after</a></li><li role="presentation"><a href="#notarget" class="node-action-2" tabindex="-1">Create first child</a></li><li role="presentation"><a href="#notarget" class="node-action-3" tabindex="-1">Create last child</a></li><li class="divider"></li><li role="presentation"><a href="#notarget" class="node-action-5" tabindex="-1">Update</a></li><li role="presentation"><a href="#notarget" class="node-action-6" tabindex="-1">Delete</a></li></ul></div>
+                </div>
+                <ul>
+                    <li class="level-3" ng-repeat="transaction in property.children" ng-show="property.expanded">
+                        <div class="tree-row">
+                            {{transaction.Name}}
+                            <div class="btn-group pull-right node-buttons"><button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li role="presentation" class="dropdown-header">Action</li><li role="presentation"><a href="#notarget" class="node-action-0" tabindex="-1">Create before</a></li><li role="presentation"><a href="#notarget" class="node-action-1" tabindex="-1">Create after</a></li><li role="presentation"><a href="#notarget" class="node-action-2" tabindex="-1">Create first child</a></li><li role="presentation"><a href="#notarget" class="node-action-3" tabindex="-1">Create last child</a></li><li class="divider"></li><li role="presentation"><a href="#notarget" class="node-action-5" tabindex="-1">Update</a></li><li role="presentation"><a href="#notarget" class="node-action-6" tabindex="-1">Delete</a></li></ul></div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<ul class="pagination">
+    <li ng-repeat="page in (paginationNumber = [] | paginate : totalPages : paginate_next : paginate_previous: currentPage)" ng-class="{active : page == currentPage}">
+        <a href="#" ng-show="page != -1 && page != -2" ng-click="page_click(page)">{{page}}</a>
+        <a ng-show="page == -1 || page == -2" ng-click="more_pages_click()">...</a>
+    </li>
+</ul>

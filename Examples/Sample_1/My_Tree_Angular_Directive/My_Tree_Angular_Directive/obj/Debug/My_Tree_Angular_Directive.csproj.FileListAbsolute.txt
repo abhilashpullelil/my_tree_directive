@@ -1,0 +1,6 @@
+c:\users\developer\documents\visual studio 2013\Projects\My_Tree_Angular_Directive\My_Tree_Angular_Directive\bin\My_Tree_Angular_Directive.dll.config
+c:\users\developer\documents\visual studio 2013\Projects\My_Tree_Angular_Directive\My_Tree_Angular_Directive\bin\My_Tree_Angular_Directive.dll
+c:\users\developer\documents\visual studio 2013\Projects\My_Tree_Angular_Directive\My_Tree_Angular_Directive\bin\My_Tree_Angular_Directive.pdb
+c:\users\developer\documents\visual studio 2013\Projects\My_Tree_Angular_Directive\My_Tree_Angular_Directive\obj\Debug\My_Tree_Angular_Directive.csprojResolveAssemblyReference.cache
+c:\users\developer\documents\visual studio 2013\Projects\My_Tree_Angular_Directive\My_Tree_Angular_Directive\obj\Debug\My_Tree_Angular_Directive.dll
+c:\users\developer\documents\visual studio 2013\Projects\My_Tree_Angular_Directive\My_Tree_Angular_Directive\obj\Debug\My_Tree_Angular_Directive.pdb

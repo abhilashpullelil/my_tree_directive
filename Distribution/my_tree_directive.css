@@ -1,0 +1,54 @@
+﻿
+.my-tree-root{
+    color:#8896a0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    cursor:pointer;
+}
+.my-tree-root ul
+ {
+     list-style-type: none;
+ }
+
+.my-tree-root li
+ {
+     list-style-type: none;
+ }
+
+.my-tree-root .node-icon-type{
+    margin-right:10px;
+}
+
+.my-tree-root li{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.my-tree-root li.level-1{
+    border-bottom :1px solid #D9DBDC;
+}
+
+.my-tree-root li:hover{
+    background-color:#f9fafb;
+}
+
+.my-tree-root .node-buttons{
+    display:none;
+}
+
+.my-tree-root li .tree-row:hover .node-buttons{
+    display:block;
+}
+
+#searchableBox::-ms-clear{
+   margin-right:20px
+}
+#searchableBox::-webkit-search-cancel-button{
+    position:relative;
+    right:5px;  
+
+    -webkit-appearance:searchfield-cancel-button;
+    height: 20px;
+    width: 20px;
+}
+
