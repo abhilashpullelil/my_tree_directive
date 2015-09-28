@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>My tree - Angular Directive by abhilashpullelil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">My tree - Angular Directive</h1>
+      <h2 class="project-tagline">Custom angular directive for simple data tree structure with pagination and search feature.</h2>
+      <a href="https://github.com/abhilashpullelil/my_tree_directive" class="btn">View on GitHub</a>
+      <a href="https://github.com/abhilashpullelil/my_tree_directive/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/abhilashpullelil/my_tree_directive/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="my_tree_directive" class="anchor" href="#my_tree_directive" aria-hidden="true"><span class="octicon octicon-link"></span></a>my_tree_directive</h1>
+
+<p>Custom angular directive for simple data tree structure with pagination and search feature.</p>
+
+<p>I am just started to implement a expandable data tree using angularJs custom directive.</p>
+
+<p>Main features of this directive are, </p>
+
+<ul>
+    <li> Plugable </li>
+    <li> Searchable</li>
+    <li> Paginated</li>
+</ul>
+
+<h1>
+<a id="how-to-use-my-tree-directive" class="anchor" href="#how-to-use-my-tree-directive" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use my-tree-directive</h1>
+
+<p>I have divided this directive into three files for ease of understand and work.</p>
+
+<p>You can find these under Distritution folder. Download it and link js and css files in your application.</p>
+
+<p>You need to add these three file to your solution. They are,</p>
+
+<ul>
+    <li> my_tree_directive.js</li>
+    <li> my_tree_directive.css </li>
+    <li> my_tree_template.html </li>
+</ul>
+
+<h4>
+<a id="-important--change-templateurl-in-my_tree_directivejs-to-your-own-path-to-my_tree_templatehtml-" class="anchor" href="#-important--change-templateurl-in-my_tree_directivejs-to-your-own-path-to-my_tree_templatehtml-" aria-hidden="true"><span class="octicon octicon-link"></span></a> Important : Change templateUrl in my_tree_directive.js to your own path to my_tree_template.html </h4>
+
+<p>That is, go and open <em>my_tree_directive.js</em> and find </p>
+
+<pre><code>templateUrl : '/my_tree_directive/my_tree_template.html' 
+</code></pre>
+
+<p>. Replace this url with your own path to <b> <em>my_tree_template.html</em> </b>.</p>
+
+<p>Note : Do not forgot to add <b>myTreeApp</b> to your module.</p>
+
+<p>For example,</p>
+
+<pre><code>var app = angular.module("myApp", ["myTreeApp"]);
+</code></pre>
+
+<p>Thats all !!!</p>
+
+<p>Now you can use <b> </b> directive to create data tree.</p>
+
+<h1>
+<a id="how-to-configure-your-directive" class="anchor" href="#how-to-configure-your-directive" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to configure your directive</h1>
+
+<p>Example :</p>
+
+<pre><code>&lt;mytree source-data="tableData" search-text="searchTreeTxt" page-size="pageSize" expand-all="expandAll"&gt;&lt;/mytree&gt;
+</code></pre>
+
+<h2>
+<a id="-attributes-of-mytree-element-" class="anchor" href="#-attributes-of-mytree-element-" aria-hidden="true"><span class="octicon octicon-link"></span></a> Attributes of mytree element </h2>
+
+<p>
+ <b>source-data</b> - specify your scope object to this attrubte. This will be the data of the tree.
+</p>
+
+<p>
+<b>search-text</b> - specify your search text model here.
+</p>
+
+<p>
+<b>page-size</b> - size of each page. That is how many elements per page. Not it is not specify directly, you need to use a scope object as this attrubtue's value and this scope object contain number.
+</p>
+
+<p>
+<b> expand-all </b> - This should point to a scope object which should be a boolean value.
+</p>
+
+<h2>
+<a id="-values-of-attributes-in-mytree-element-" class="anchor" href="#-values-of-attributes-in-mytree-element-" aria-hidden="true"><span class="octicon octicon-link"></span></a> Values of attributes in mytree element </h2>
+
+<p>Here, </p>
+
+<pre><code>&lt;b&gt;tableData&lt;/b&gt; is the scope object which hold your data source.
+</code></pre>
+
+<p>Example for tableData;</p>
+
+<pre><code>$scope.tableData =
+        [
+            {
+                Name: "Level 1", Id: "", visible : true, expanded : true,
+                children: [
+                  {
+                      Name: "Level 1.1", Id: "", visible: true, expanded: true,
+                      children: [
+                          { Name: "Level 1.1.1", Id: "", visible: true, expanded: true },
+                          { Name: "Level 1.1.2", Id: "", visible: true, expanded: true }
+                      ]
+                  },
+                  {
+                      Name: "Level 1.2", Id: "", visible: true, expanded: true,
+                      children: [
+                          { Name: "Level 1.2.1", Id: "", visible: true, expanded: true }
+                      ]
+                  }
+                ]
+            },
+            {
+                Name: "Level 2", Id: "", visible: true, expanded: true,
+                children: [
+                  {
+                      Name: "Level 2.1", Id: "", visible: true, expanded: true,
+                      children: [
+                          { Name: "Level 2.1.1", Id: "", visible: true, expanded: true },
+                          { Name: "Level 2.1.2", Id: "", visible: true, expanded: true }
+                      ]
+                  },
+                  {
+                      Name: "Level 2.2", Id: "", visible: true, expanded: true,
+                      children: [
+                          { Name: "Level 1.2.1", Id: "", visible: true, expanded: true }
+                      ]
+                  }
+                ]
+            },
+            {
+                Name: "Level 3", Id: "", visible: true, expanded: true,
+                children: [
+                  {
+                      Name: "Level 3.1", Id: "", visible: true, expanded: true,
+                      children: [
+                          { Name: "Level 3.1.1", Id: "", visible: true, expanded: true },
+                          { Name: "Level 3.1.2", Id: "", visible: true, expanded: true }
+                      ]
+                  },
+                  {
+                      Name: "Level 3.2", Id: "", visible: true, expanded: true,
+                      children: [
+                          { Name: "Level 3.2.1", Id: "", visible: true, expanded: true }
+                      ]
+                  }
+                ]
+            },
+
+        ];
+</code></pre>
+
+<p>in your controller.</p>
+
+<p><b>searchTreeTxt</b> is your scope object which contain search text.
+Example,</p>
+
+<pre><code>&lt;!--Tree search box--&gt;
+                    &lt;input id="searchableBox" results="5" type="search" class="form-control" ng-model="searchTreeTxt" placeholder="Search tree"  /&gt;
+</code></pre>
+
+<p><b>pageSize</b> is the root elements per page for pagination.
+for example </p>
+
+<pre><code>$scope.pageSize = 10;
+</code></pre>
+
+<p><b>expandAll </b> is a boolean value. Change in this variable will expand or collapse all branches in the tree.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/abhilashpullelil/my_tree_directive">My tree - Angular Directive</a> is maintained by <a href="https://github.com/abhilashpullelil">abhilashpullelil</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
